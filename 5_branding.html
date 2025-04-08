@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Branding</title>
+  <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+
+
+
+
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
+
+
+:root {
+    --violet: rgb(126, 59, 233);
+    --gradient: linear-gradient(90deg, rgb(61, 64, 210), rgb(177, 57, 253));
+    --gradient-hover: linear-gradient(90deg, rgb(47, 49, 155), rgb(127, 42, 180));
+    --white: #f1f1f3;
+    --blue-primary: #3d40d2;
+    --violet-second: #b139fd;
+}
+
+    *{
+      font-family: poppins;
+    }
+
+    body {
+      
+      margin: 0;
+      background-image: url(img/00_BG_IMG.webp);
+      background-color: var(--white);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .page_title {
+      font-family: syne;
+      text-align: center;
+      padding: 2rem 1rem 0;
+      font-size: 2.5rem;
+      color: #333;
+      font-weight: 800;
+
+      /* background: linear-gradient(90deg, rgb(61, 64, 210), rgb(177, 57, 253));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    }
+
+    .footer {
+      margin-top: 200px;
+      text-align: center;
+    }
+
+
+    /* h1 {
+      text-align: center;
+      padding: 2rem 1rem 0;
+      font-size: 2.5rem;
+      color: #333;
+    } */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .star {
+    position: absolute;
+    height: 50px;
+    width: auto;
+    bottom: 85%;
+    right: 29%;
+
+    animation-name: float;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+}
+
+
+
+    /* Lightbox overlay */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .lightbox:after {
+      content: "✕";
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+
+
+
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(242, 241, 243, 0.664);
+    backdrop-filter: blur(10px);
+    height: 28px;
+    z-index: 1;
+    animation: fadeIn 0.6s ease-in forwards;
+}
+
+.navbutton{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: black;
+    transition: 0.3s ease;
+    transition-property: all;
+    background: linear-gradient(black, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbutton:hover{
+    color: rgb(126, 59, 233);
+    border-bottom: 3px solid linear-gradient(90deg, rgb(61, 64, 210), rgb(177, 57, 253));
+    background: linear-gradient(90deg, rgb(61, 64, 210), rgb(177, 57, 253));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+
+
+.navbutton:active {
+    color: rgb(126, 59, 233); 
+}
+
+
+.contact_div {
+}
+
+
+.navbutton_contact {
+    text-decoration: underline transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--gradient);
+    padding: 12px 24px;
+    color: white;
+    margin-top: -10px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbutton_contact:hover {
+    color: rgb(126, 59, 233);
+    cursor: pointer;
+    border-color: rgba(255, 255, 255, 0.103);
+    box-shadow: 0px 3px 3px rgb(153, 153, 153);
+    background-color: white;
+    background: linear-gradient(white,rgb(227, 223, 228));
+}
+
+
+.fa-phone {
+    padding-left: 10px;
+    font-size: 11px;
+    margin-top: -2px;
+}
+
+
+
+
+.navburger_div {
+    display: none;
+}
+
+
+
+
+
+.navbutton_logo{
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    color: black;
+    transition: 0.3s ease;
+}
+
+.navbutton_logo:hover{
+    /* color: rgb(126, 59, 233); */ 
+    /* border-bottom: 3px solid rgb(126, 59, 233); */
+}
+
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu li{
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 0;
+    display: block;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.335);
+    backdrop-filter: blur(10px);
+    background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
+.submenu {
+    border-radius: 5px;
+    list-style: none;
+    position: absolute;
+    display: none;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    top: 100%;
+    right: 0;
+    width: 150px;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+
+
+
+
+
+    @keyframes float {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(10px);
+    }
+    
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 1750px) {
+    .star {
+      position: absolute;
+      height: 50px;
+      width: auto;
+      bottom: 85%;
+      right: 7%;
+      } 
+  }
+
+
+
+
+
+  @media (max-width:768px) {
+    .navbutton {
+        display: none;
+    }
+    
+
+    .navburger_div {
+        display: block;
+        
+    }
+
+    .navburger {
+        text-decoration: none;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .contact_div {
+        display: none;
+    }
+
+  }
+
+
+
+
+
+
+
+    @media (max-width: 600px) {
+      .page_title {
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .star {
+      position: absolute;
+      height: 50px;
+      width: auto;
+      bottom: 85%;
+      right: 3%;
+      } 
+
+    }
+  </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+  <div class=navbar>
+    <div>
+        <button class="navbutton_logo" style="float: left; margin-top: -12px;">
+            <img src="img/7.webp" width=100px; alt="LOGO">
+        </button>
+    </div>
+    <div>
+        <a href="#home"><button class="navbutton" active>Home</button></a>
+        <a href="#about_me"><button class="navbutton">About Me</button></a>
+        <a href="#services"><button class="navbutton">Services</button></a>
+        <!-- <a href="#services"><button class="navbutton">My Designs</button></a> -->
+                    
+    </div>
+    <div class="contact_div">
+        <a href="#contact" style="text-decoration: none;">
+            <button class="navbutton_contact">Contact
+                <i class="fas fa-phone"></i>
+            </button>
+        </a> 
+    </div>
+    <div class="navburger_div">
+        
+        <ul class="menu">
+            <li class="dropdown">
+                <button class="navburger"><i class="fas fa-list-ul"></i></button>
+                <ul class="submenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about_me">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    
+    
+</div>
+
+    <br><br>
+
+
+  <h1 class="page_title"> 📸 My Brandings</h1> 
+  <img src="img/star.webp" class="star" alt="">
+
+  <div class="gallery">
+    <img src="services/branding/1.webp" alt="Image 1">
+    <img src="services/branding/2.webp" alt="Image 2">
+    <img src="services/branding/3.webp" alt="Image 3">
+    <img src="services/branding/4.webp" alt="Image 4">
+    <img src="services/branding/5.webp" alt="Image 5">
+  </div>
+
+  <div class="lightbox" id="lightbox"></div>
+
+  <div width=100% height=50px>
+    <p align=center class="footer"> All copyrights reserved to <u>Tsantaniaina Design</u></p> 
+</div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const fullImg = document.createElement('img');
+        fullImg.src = img.src;
+        lightbox.innerHTML = '';
+        lightbox.appendChild(fullImg);
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+
+
+    const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver ((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+        else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, { threshold: 0.5});
+
+sections.forEach((section) => {
+    observer.observe(section);
+})
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".form_content");
+    const inputs = document.querySelectorAll(".table_form_text, .table_form_textarea");
+    const sendButton = document.querySelector(".form_button_send");
+
+    sendButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Empêche l'envoi par défaut
+        let allFilled = true;
+
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                allFilled = false;
+                input.style.border = "1px solid red"; // Met en rouge les champs vides
+            } else {
+                /* input.style.border = "2px solid b"; // Met en vert si rempli */
+            }
+        });
+
+        if (allFilled) {
+            alert("✅ Formulaire envoyé avec succès !");
+            form.submit(); // Envoie le formulaire si tout est rempli
+        } else {
+            alert("⚠️ Veuillez remplir tous les champs !");
+        }
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".animated");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Stop observer après animation
+            }
+        });
+    }, { threshold: 0.3 });
+
+    elements.forEach(element => observer.observe(element));
+});
+  </script>
+
+</body>
+</html>
