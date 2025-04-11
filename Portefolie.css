@@ -32,6 +32,7 @@ body {
 
 
 section{
+    /* height: 100vh; */
     transition: all 0.5s ease-in-out;
 }
 
@@ -49,9 +50,23 @@ section{
 
 
 
+
+
+/* .cadre-img {
+    background-image: url(img/PHOTO2.jpg); 
+    border-radius: 20px; 
+    background-size: 1200px; 
+    background-repeat: no-repeat;
+} */
+
+
+
+
+
 .container0 {
     display: flex;
     justify-content: space-around;
+/*     flex-direction: row-reverse; */
     flex-wrap: wrap;
     gap: 0px;
     padding-left: 10%;
@@ -75,6 +90,7 @@ section{
     padding-top: 100px;
     border-radius: 8px;
     animation: fadeIn 0.6s ease-in forwards;
+    /* padding: 100px 100px; */
 }
 
 
@@ -96,8 +112,12 @@ section{
     width: fit-content;
     text-align: center;
     overflow: hidden;
+    /* box-shadow: 20px 20px 20px rgba(199, 178, 166, 0.74);
+    border-radius: 8px; */
     transition: all 0.4s ease-in-out;
     animation: slideIn 0.6s ease-in forwards;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
 }
 
 .card_about:hover {
@@ -118,6 +138,8 @@ section{
     width: 700px;
     margin-top: 0px;
     animation: fadeIn 0.6s ease-in forwards;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
     background-color: #f2f1f359;
     backdrop-filter: blur(2px);
     padding: 30px 50px;
@@ -296,6 +318,8 @@ section{
 }
 
 .navbutton_logo:hover{
+    /* color: rgb(126, 59, 233); */ 
+    /* border-bottom: 3px solid rgb(126, 59, 233); */
 }
 
 
@@ -306,6 +330,31 @@ section{
    margin-left: 24px;
    margin-top: 16px;
 }
+
+/* .image{
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 24px;
+    margin-top: 16px;
+    width: 350px;
+    height: 500px;
+ }
+
+
+ .title {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 20px;
+    text-align: center;
+ }
+
+ .title2 {
+    color: rgba(255, 255, 255, 0.63);
+    padding-top: 0px;
+    text-align: center;
+ }
+ */
+ 
 
 .container {
     display: flex;
@@ -324,7 +373,12 @@ section{
     margin-top: 100px;
     transition: 0.3s ease;
     animation: appear linear;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
+    /* box-shadow: 20px 20px 50px rgb(229, 219, 235); */
     border-radius: 8px;
+    /* backdrop-filter: blur(5px);
+    background-color: transparent; */
 }
 
 
@@ -491,6 +545,7 @@ section{
     padding-top: 20px; 
     padding-bottom: 40px;
     padding-left: 10%;
+    /* padding-right: 10%; */
 }
 
 
@@ -554,6 +609,9 @@ section{
 
 
 .bg_blur{
+    /* background-color: rgba(242, 241, 243, 0.575);
+    backdrop-filter: blur(5px);
+    border-radius: 25px; */
 }
 
 
@@ -568,6 +626,10 @@ section{
     top: -80px;
     right: 500px;
     rotate: 30deg;
+    /* animation: slideIn 0.6s ease-in forwards;
+    animation-delay: 0.1s;
+    opacity: 0; */
+
     animation-name: float;
     animation-duration: 3s;
     animation-delay: 0.9s;
@@ -575,6 +637,7 @@ section{
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-play-state: running;
+    /* rotate: 70deg; */
 }
 
 .regle{
@@ -630,6 +693,9 @@ section{
     scale: 22%;
     top: 200px;
     right: -110;
+    /* animation: slideIn 0.6s ease-in forwards;
+    animation-delay: 0.4s;
+    opacity: 0; */
     filter: blur(7px);
 
     animation-name: float;
@@ -708,6 +774,8 @@ section{
     font-size: 3rem;
     position: relative;
     animation: fadeIn 0.6s ease-in forwards;
+   /*  animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
 }
 
 .section_name::after{
@@ -812,6 +880,9 @@ textarea:focus {
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.6s ease-in forwards;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 30%; */
+
 }
 
 
@@ -1172,48 +1243,24 @@ tbody.tbody_form {
 
 
 
-/* @media (max-width: 1600px) {
-   
-}
-
- */
-
-
-
-
-
-
-
-
-
-@media (max-width: 1545px) {
+@media (max-width: 1600px) {
     .service_description_btn {
         width: 400px;
     }
+}
 
-    .container0 {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 0px;
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-top: 30px;
-    }
 
-    .card0 {
-        left: 0;
-        overflow: visible;
-    }
 
-    .DarkK_picture {
-        display: none;
-        margin: -100px -200px;
-        margin-bottom: 0px;
-    }
 
-    .landing_texts {
-    }
+
+
+
+
+
+
+
+@media (max-width: 1460px) {
+
     
     .img_skills {
         height: 100px;
@@ -1230,15 +1277,6 @@ tbody.tbody_form {
         right: 300;
         height: 200px;
     }
-
-    .skills_icon {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin-bottom: 50px;
-        gap: 20px;
-        z-index: 5;
-    }
 }
 
 
@@ -1246,6 +1284,22 @@ tbody.tbody_form {
 
 
 
+
+/* @media (max-width: 1560px) {
+
+    .DarkK_picture {
+        scale: 95%;
+    }
+
+    .card0 {
+        scale: 95%;
+    }
+
+    .landing_texts {
+        scale: 95%;
+    }
+
+    } */
 
 
 
@@ -1261,6 +1315,7 @@ tbody.tbody_form {
 
     .DarkK_picture {
         margin: -50px -200px;
+        /* margin-bottom: 500px; */
         scale: 95%;
     }
 
@@ -1403,6 +1458,7 @@ tbody.tbody_form {
 
 @media (max-width:768px) {
     .DarkK_picture {
+        /* display: none; */
         margin-top: -100px;
         margin-bottom: -150px;
         scale: 85%;
@@ -1544,13 +1600,8 @@ tbody.tbody_form {
 
 
 @media (max-width:550px) {
-    .DarkK_picture {
-        display: block;
-    }
-
     .about_text {
         font-size: 12px;
-        line-height: 20px;
     }
 
     .description_about {
@@ -1666,7 +1717,7 @@ tbody.tbody_form {
     }
 
     .footer {
-        font-size: 12px;
+        font-size: 10px;
         margin-top: -200px;
     }
 
